@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Donation & Emergency Donor Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🩸 BloodConnect
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#donors">Donors</a>
+                <a href="#request">Emergency Request</a>
+                <a href="#requests">Requests</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Blood Donation & Emergency Donor Finder</h1>
+
+            <p>
+                Find blood donors quickly and help save lives during
+                medical emergencies.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#donor-form" class="btn">
+                    Become a Donor
+                </a>
+
+                <a href="#request" class="btn emergency-btn">
+                    Emergency Request
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Donor Registration -->
+    <section id="donor-form" class="section">
+
+        <h2>Register as a Blood Donor</h2>
+
+        <form id="donorForm" class="form">
+
+            <div class="form-group">
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="donorName"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Blood Group</label>
+
+                <select id="donorBloodGroup" required>
+
+                    <option value="">Select Blood Group</option>
+
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+
+                </select>
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    id="donorAge"
+                    min="18"
+                    max="65"
+                    placeholder="Enter age"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="donorPhone"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="donorLocation"
+                    placeholder="City / Area"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Availability</label>
+
+                <select id="donorAvailability" required>
+
+                    <option value="">Select Availability</option>
+                    <option value="Available">Available</option>
+                    <option value="Not Available">Not Available</option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit" class="btn">
+                Register Donor
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Donor Listing -->
+    <section id="donors" class="section">
+
+        <h2>Available Blood Donors</h2>
+
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="donorSearch"
+                placeholder="Search by name or location..."
+            >
+
+
+            <select id="bloodFilter">
+
+                <option value="">All Blood Groups</option>
+
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+
+            </select>
+
+        </div>
+
+
+        <div id="donorList" class="card-container">
+
+            <!-- Donors will be displayed here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- Emergency Request -->
+    <section id="request" class="section emergency-section">
+
+        <h2>Create Emergency Blood Request</h2>
+
+
+        <form id="requestForm" class="form">
+
+            <div class="form-group">
+
+                <label>Patient Name</label>
+
+                <input
+                    type="text"
+                    id="patientName"
+                    placeholder="Patient name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Required Blood Group</label>
+
+                <select id="requiredBloodGroup" required>
+
+                    <option value="">Select Blood Group</option>
+
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Required Quantity</label>
+
+                <input
+                    type="number"
+                    id="bloodQuantity"
+                    min="1"
+                    placeholder="Units required"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Hospital</label>
+
+                <input
+                    type="text"
+                    id="hospital"
+                    placeholder="Hospital name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="requestLocation"
+                    placeholder="Hospital location"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Required Date & Time</label>
+
+                <input
+                    type="datetime-local"
+                    id="requiredDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Contact Number</label>
+
+                <input
+                    type="tel"
+                    id="requestPhone"
+                    placeholder="Contact number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Emergency Description</label>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe the emergency..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="btn emergency-btn">
+                Create Emergency Request
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Emergency Requests -->
+    <section id="requests" class="section">
+
+        <h2>Active Emergency Requests</h2>
+
+        <div id="requestList" class="card-container">
+
+            <!-- Requests appear here -->
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 BloodConnect | Donate Blood • Save Lives
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
